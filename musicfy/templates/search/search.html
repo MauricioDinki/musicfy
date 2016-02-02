@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Search a video
+  Search a Video
 {% endblock %}
 
 {% block content %}
   <div class="container">
     <h1 class="center-align">Search a Video</h1>
     <div class="row">
-      <form class="col s12">
+      <form class="col s12" action="." method="post">
+        {% csrf_token %}
         <div class="row">
           <div class="input-field col s12">
-            <input id="video_url" type="text" class="validate">
-            <label for="disabled">Video URL</label>
+            <input id="video_url" type="url" class="validate">
+            <label for="video_url">Video URL</label>
           </div>
         </div>
         <div class="center-align">
